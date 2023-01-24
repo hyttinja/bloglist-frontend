@@ -24,7 +24,7 @@ const Blog = ({ blog, updateBlog,deleteBlog,user }) => {
     }
   }
   console.log(blog.user)
-  console.log(user.username)
+  console.log(user)
   return(<div style={blogStyle}>
     <div>
       {blog.title}

@@ -89,6 +89,16 @@ const App = () => {
         setMessage({ text:undefined, error: false })
       },3000)
     }
+    finally{
+      blogService.getAll().then(blogs =>
+        setBlogs( sortBlogsByLikes(blogs) )
+      ).catch(error => {
+        setMessage({ text: 'Fetching blogs failed',isError:true })
+        setTimeout(() => {
+          setMessage({ text:undefined,isError:false })
+        },3000)
+      })
+    }
   }
   const updateBlog = async(blog) => {
     console.log(blog)
